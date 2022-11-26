@@ -79,10 +79,10 @@ class UNO {
 
     playCard(player, card) {
         var cardInfo = card.split('_');
-        console.log("card: ", cardInfo);
+        //console.log("card: ", cardInfo);
 
         var topInfo = this.top.split('_');
-        console.log("top: ", topInfo);
+        //console.log("top: ", topInfo);
 
         var cardColor = cardInfo[0];
         var cardType = cardInfo[1];
@@ -91,8 +91,16 @@ class UNO {
         var topType = topInfo[1];
 
         if (this.top === 'none' || cardColor === topColor || cardType === topType) {
-            console.log('can play');
-            this.cards[player] = this.cards[player].filter((item) => item.name != card);
+            //console.log('can play');
+            for (var i = 0; i < this.cards[player].length; i++) {
+                
+                //console.log(this.cards[player][i].name, card);
+                if (this.cards[player][i].name === card) {
+                    this.cards[player].splice(i, 1);
+                    break;
+                }
+            }
+            //this.cards[player] = this.cards[player].filter((item) => item.name != card);
             this.top = card;
             this.playedCards.push(card);
 
