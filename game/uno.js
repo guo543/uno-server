@@ -9,7 +9,7 @@ class UNO {
         var i = 0;
         var rand = Math.floor(Math.random() * 2);
         for (var player in this.cards) {
-            for (var j = 0; j < 4; j++) {
+            for (var j = 0; j < 7; j++) {
                 this.cards[player].push({ name: this.cardDeck.pop() });
             }
             if (i === rand) {
