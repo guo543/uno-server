@@ -48,5 +48,5 @@ io.on("connection", (socket) => {
     })
 });
 
-httpServer.listen(5000);
+httpServer.listen(80);
 console.log('hello');
