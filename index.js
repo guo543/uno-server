@@ -48,5 +48,8 @@ io.on("connection", (socket) => {
     })
 });
 
-httpServer.listen(80);
-console.log('hello');
+const PORT = process.env.PORT || 5000;
+
+httpServer.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+});
